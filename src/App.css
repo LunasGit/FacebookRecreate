@@ -1,0 +1,275 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* App container */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to right, #edf2f7, #ffffff);
+  color: #333;
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.header input[type="text"] {
+  padding: 0.5rem 1rem;
+  border: 2px solid #ffffff88;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 20px;
+  outline: none;
+  width: 200px;
+  transition: width 0.3s ease, background 0.3s;
+}
+
+.header input[type="text"]::placeholder {
+  color: #ffffffcc;
+}
+
+.header input[type="text"]:focus {
+  width: 250px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Main body */
+.app__body {
+  display: flex;
+  flex: 1;
+  padding: 2rem;
+  gap: 1.5rem;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Sidebar Styling */
+.sidebar {
+  flex: 0.2;
+  background: linear-gradient(to top, #ffffff, #f0f2f5);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #0077b6;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  color: #333;
+  transition: background 0.3s ease, color 0.3s;
+}
+
+.sidebar li:hover {
+  background: #0077b6;
+  color: #fff;
+}
+
+/* Feed styling */
+.feed {
+  flex: 0.5;
+}
+
+.feed h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0077b6;
+  margin-bottom: 1.5rem;
+}
+
+/* Post Input */
+.postInput {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.postInput textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #d1d9e6;
+  border-radius: 8px;
+  resize: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.postInput button {
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  background: linear-gradient(135deg, #00b4d8, #0096c7);
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s;
+}
+
+.postInput button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Post Styling */
+.post {
+  background: #ffffff;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.post h3 {
+  font-size: 1.2rem;
+  color: #0077b6;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.post p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.post__comments {
+  margin-top: 1rem;
+}
+
+.post__comments textarea {
+  width: 100%;
+  border: 2px solid #d1d9e6;
+  border-radius: 8px;
+  resize: none;
+  padding: 0.5rem;
+  outline: none;
+}
+
+.post__actionButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.post__commentButton,
+.post__likeButton {
+  padding: 0.3rem 1rem;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #0077b6;
+  background: #e0f7ff;
+  transition: background 0.3s ease;
+}
+
+.post__commentButton:hover,
+.post__likeButton:hover {
+  background: #bdefff;
+}
+
+.post__expandButton {
+  background: none;
+  border: none;
+  color: #0077b6;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.post__expandButton:hover {
+  color: #0096c7;
+}
+
+/* Widgets Styling */
+.widgets {
+  flex: 0.3;
+  background: #f9fafe;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.widgets__section {
+  margin-bottom: 1.5rem;
+}
+
+.widgets__section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0077b6;
+  margin-bottom: 0.5rem;
+}
+
+.widgets__section ul {
+  list-style: none;
+}
+
+.widgets__section li {
+  padding: 0.6rem 0;
+  color: #333;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.widgets__section li:hover {
+  color: #00b4d8;
+}
+
+/* Animations */
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.post__likeButton:active {
+  animation: pop 0.3s ease;
+}
